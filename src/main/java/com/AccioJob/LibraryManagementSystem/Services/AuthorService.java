@@ -1,9 +1,12 @@
 package com.AccioJob.LibraryManagementSystem.Services;
 
+import com.AccioJob.LibraryManagementSystem.Controller.AuthorController;
 import com.AccioJob.LibraryManagementSystem.Entities.Author;
 import com.AccioJob.LibraryManagementSystem.Repositories.AuthorRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
+import java.util.List;
 
 @Service                         // Indicates that this class is a service component
 public class AuthorService {
@@ -18,5 +21,20 @@ public class AuthorService {
         authorRepository.save(author);  // Saving the author to the database
 
         return "Author added successfully.";
+    }
+
+    public Author getAuthorWithMaxBooks(){
+        List<Author> authorList = authorRepository.findAll();
+
+        Author authorWithMaxBooks = null;
+        int maxBooks = 0;
+
+        for(Author author : authorList){
+            if(author.getNoOfBooks() > maxBooks){
+                maxBooks = author.getNoOfBooks();
+                authorWithMaxBooks = author;
+            }
+        }
+        return authorWithMaxBooks;
     }
 }

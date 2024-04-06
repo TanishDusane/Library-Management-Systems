@@ -3,8 +3,16 @@ package com.AccioJob.LibraryManagementSystem.Repositories;
 import com.AccioJob.LibraryManagementSystem.Entities.Student;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
+import java.util.List;
 
-@Repository                       // Indicates that this interface is a Spring Data repository
+// Indicates that this interface is a Spring Data repository
+// This interface extends JpaRepository for CRUD operations on Student entities with Integer primary key
+@Repository
 public interface StudentRepository extends JpaRepository<Student,Integer> {
-    // This interface extends JpaRepository for CRUD operations on Student entities with Integer primary key
+
+    // Method to find students by branch and CGPA greater than a certain value
+    List<Student> findStudentByBranchAndCgpaGreaterThan(String branch, double cgpa);
+
+    // Method to find student by email ID
+    Student findStudentByEmailId(String emailId);
 }

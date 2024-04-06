@@ -19,4 +19,10 @@ public class AuthorController {
         String result = authorService.addAuthor(author);    // Calling the service method to add the author
         return result;
     }
+
+    @GetMapping("/getMaxBooks")                     // Defines a method to retrieve the author with the maximum number of books
+    public Author getAuthor(){
+        Author author = authorService.getAuthorWithMaxBooks();
+        return author;
+    }
 }
