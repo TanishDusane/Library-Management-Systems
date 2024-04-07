@@ -24,6 +24,7 @@ public class BookService {
         if(book.getNoOfPages() <= 0){
             throw new InvalidPageCount("Invalid page count: The number of pages cannot be negative.");
         }
+        book.setIssued(Boolean.FALSE);
         bookRepository.save(book);  // Saving the book to the database
         return "Book added successfully.";
     }

@@ -6,6 +6,7 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import org.hibernate.annotations.CreationTimestamp;
 import org.springframework.data.annotation.CreatedDate;
 import java.util.Date;
 
@@ -25,7 +26,7 @@ public class Transaction {
     @Enumerated(value = EnumType.STRING)        // Specifies the type of enumeration used for the genre column
     private TransactionStatus transactionStatus;
 
-    @CreatedDate
+    @CreationTimestamp
     private Date issuedDate;
 
     private Date returnDate;
@@ -38,5 +39,5 @@ public class Transaction {
 
     @JoinColumn                     // Specifies the foreign key column for the association with the LibraryCard table
     @ManyToOne
-    private LibraryCard libraryCard;
+    private LibraryCard card;
 }

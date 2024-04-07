@@ -10,8 +10,8 @@ import java.util.List;
 @Repository
 public interface StudentRepository extends JpaRepository<Student,Integer> {
 
-    // Method to find students by branch and CGPA greater than a certain value
-    List<Student> findStudentByBranchAndCgpaGreaterThan(String branch, double cgpa);
+    // Method to find students by course and CGPA greater than a certain value
+    List<Student> findStudentByCourseAndCGPAGreaterThan(String course, double cgpa);
 
     // Method to find student by email ID
     Student findStudentByEmailId(String emailId);

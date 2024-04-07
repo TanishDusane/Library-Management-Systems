@@ -11,18 +11,18 @@ import java.util.List;
 @RequestMapping("/student")                         // Base mapping for all endpoints in this controller
 public class StudentController {
 
-    @Autowired                                                 // Autowired annotation to inject an instance of StudentService
+    @Autowired                                      // Autowired annotation to inject an instance of StudentService
     private StudentService studentService;
 
-    @PostMapping("/add")                                      // Endpoint for adding a student via HTTP POST method
+    @PostMapping("/add")                            // Endpoint for adding a student via HTTP POST method
     public String addStudent(@RequestBody Student student){
         String result =studentService.addStudent(student);
         return result;
     }
 
-    @GetMapping("/getTopperStudents")
-    public List<Student> getStudents(@RequestParam("branch") String branch, @RequestParam("cgpa") double cgpa){
-        List<Student> studentList = studentService.findStudent(branch,cgpa);
+    @GetMapping("/getTopperStudents")               // Endpoint to retrieve a list of students who are toppers in a particular course based on CGPA
+    public List<Student> getStudents(@RequestParam("course") String course, @RequestParam("cgpa") double cgpa){
+        List<Student> studentList = studentService.findStudent(course,cgpa);
         return studentList;
     }
 }

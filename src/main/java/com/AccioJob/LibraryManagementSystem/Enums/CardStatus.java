@@ -5,4 +5,3 @@ public enum  CardStatus {
     New,       // Card is new
     Blocked,   // Card is blocked
 }
-

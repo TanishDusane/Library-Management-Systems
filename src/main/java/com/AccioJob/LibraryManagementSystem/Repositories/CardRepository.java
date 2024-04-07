@@ -8,3 +8,4 @@ import org.springframework.stereotype.Repository;
 public interface CardRepository extends JpaRepository<LibraryCard,Integer> {
     // This interface extends JpaRepository for CRUD operations on LibraryCard entities with Integer primary key
 }
+

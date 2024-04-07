@@ -7,6 +7,7 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 import java.time.LocalDate;
+import java.util.Date;
 
 @Entity                             // Entity annotation indicates this class is a JPA entity
 @Table(name = "CardInfo")           // Table annotation specifies the name of the table in the database
@@ -25,7 +26,7 @@ public class LibraryCard {
     private CardStatus cardStatus;
 
     private int noOfBooksIssued;
-    private LocalDate validity;
+    private Date validity;
 
     @JoinColumn                     // Specifies the foreign key column for the association with the Student table
     @OneToOne

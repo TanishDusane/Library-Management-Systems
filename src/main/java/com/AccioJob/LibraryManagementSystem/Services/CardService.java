@@ -8,6 +8,7 @@ import com.AccioJob.LibraryManagementSystem.Repositories.StudentRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import java.time.LocalDate;
+import java.util.Date;
 
 @Service                         // Indicates that this class is a service component
 public class CardService {
@@ -27,7 +28,7 @@ public class CardService {
         card.setCardStatus(CardStatus.New);  // Set the card status to New
 
         // Set the expiration date to July 12, 1028
-        LocalDate expireDate = LocalDate.of(1028, 7, 12);
+        Date expireDate = new Date(128, 6, 1);
         card.setValidity(expireDate);
 
         // Save the new library card to the database
