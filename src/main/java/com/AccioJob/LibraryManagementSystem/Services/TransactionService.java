@@ -33,12 +33,12 @@ public class TransactionService {
 
         // Check if the book ID is null
         if (bookId == null) {
-            return "Book ID is missing. Please provide the book ID.";
+            throw new Exception ("Book ID is missing. Please provide the book ID.");
         }
 
         // Check if the card ID is null
         if (cardId == null) {
-            return "Card ID is missing. Please provide the card ID.";
+            throw new Exception ("Card ID is missing. Please provide the card ID.");
         }
 
         // Retrieve the book by its ID

@@ -62,7 +62,6 @@ public class BookService {
                 result.add(book);  // Add the book to the result list
             }
         }
-
         return result;  // Return the list of books by the specified author
     }
 }

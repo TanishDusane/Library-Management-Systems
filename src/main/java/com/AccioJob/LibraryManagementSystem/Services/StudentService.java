@@ -17,8 +17,11 @@ public class StudentService {
         return "The student data has been successfully stored in the database.";
     }
 
+    // Method to find students based on a given course and a minimum CGPA.
     public List<Student> findStudent(String course, double cgpa) {
-        List<Student> students = studentRepository.findStudentByCourseAndCGPAGreaterThan(course,cgpa);
+        // Retrieve students from the repository who are enrolled in the specified course and have a CGPA greater than the provided value.
+        List<Student> students = studentRepository.findStudentByCourseAndCGPAGreaterThan(course, cgpa);
+        // Return the list of matching students.
         return students;
     }
 }

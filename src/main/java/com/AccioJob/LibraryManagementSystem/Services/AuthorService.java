@@ -23,18 +23,25 @@ public class AuthorService {
         return "Author added successfully.";
     }
 
-    public Author getAuthorWithMaxBooks(){
+    // Method to retrieve the author with the maximum number of books in the author repository.
+    public Author getAuthorWithMaxBooks() {
+        // Retrieve all authors from the repository.
         List<Author> authorList = authorRepository.findAll();
 
+        // Initialize variables to track the author with the maximum number of books and the maximum number of books found so far.
         Author authorWithMaxBooks = null;
         int maxBooks = 0;
 
-        for(Author author : authorList){
-            if(author.getNoOfBooks() > maxBooks){
+        // Iterate through the list of authors to find the one with the maximum number of books.
+        for (Author author : authorList) {
+            // Check if the current author has more books than the maximum number found so far.
+            if (author.getNoOfBooks() > maxBooks) {
+                // Update the maximum number of books and the author with the maximum number of books.
                 maxBooks = author.getNoOfBooks();
                 authorWithMaxBooks = author;
             }
         }
+        // Return the author with the maximum number of books.
         return authorWithMaxBooks;
     }
 }
