@@ -28,13 +28,14 @@ This is a Library Management System designed to manage books, library cards, aut
 To get started with this project, follow these steps:
 
 1. Clone the repository to your local machine using the following command:
+   
    ```
    git clone https://github.com/TanishDusane/Library-Management-Systems.git
    ```
 
-2. Set up your development environment with Java and Maven.
-3. Configure your database connection in the application properties file.
-4. Run the application using Maven or your preferred IDE.
+3. Set up your development environment with Java and Maven.
+4. Configure your database connection in the application properties file.
+5. Run the application using Maven or your preferred IDE.
 
 ## Usage
 
@@ -59,7 +60,7 @@ You can use Postman to test the API endpoints. Import the provided Postman colle
 
 ## Contributors
 
-- Tanish Dusane - Spring Boot Developer
+- [Tanish Dusane](https://github.com/TanishDusane/TanishDusane)
 
 ---
 
