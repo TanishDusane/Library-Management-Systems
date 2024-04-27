@@ -1,7 +1,5 @@
 # Library Management System Project
 
-## Introduction
-
 This is a Library Management System designed to manage books, library cards, authors, students, and transactions in a library setting. It provides functionality for adding books, issuing books to library members, managing library cards, tracking transactions, managing authors, and managing students.
 
 ## Features
